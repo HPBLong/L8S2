@@ -22,6 +22,7 @@ const password = document.getElementById("password");
 const loginError = document.getElementById("login-error");
 const usernameError = document.getElementById("username-error");
 const passwordError = document.getElementById("password-error");
+let userdata = [];
 let lowercase = /[a-z]/g;
 let uppsercase = /[A-Z]/g;
 let numbers = /[0-9]/g;
@@ -48,13 +49,14 @@ loginBtn.onclick = function () {
   }
 
   function LCcheck() {
-    if (localStorage.UserKey) {
+    if (
+      userdata.username.value == username.value &&
+      userdata.password.value == password.value
+    ) {
       loginError.innerHTML = "Username or password already taken!";
+      console.log(userdata);
     } else {
       let Uinfo = [username.value, password.value];
-
-      localStorage.setItem("UserKey", JSON.stringify(Uinfo));
-
       loginError.innerHTML = "";
       window.location.href = "../login.html";
     }

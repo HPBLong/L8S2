@@ -85,9 +85,9 @@ const products = [
   },
 ];
 
-const FPSItem = document.getElementById("fps");
-const SandboxItem = document.getElementById("sandbox");
-const ActionItem = document.getElementById("action");
+const FPSItem = document.querySelector(".fps-row");
+const SandboxItem = document.querySelector(".sandbox-row");
+const ActionItem = document.querySelector(".action-row");
 
 for (let i = 0; i < 4; i++) {
   FPSItem.innerHTML += `<div class="product-wrapper col-3">
