@@ -10,9 +10,9 @@ body {
   justify-content: right;
   align-items: center;
   height: 100vh;
-  background: url(../images/square.jpeg);
+  background: url(../images/squares2.png);
+  background-color: #2ecc71;
   background-repeat: no-repeat;
-  background-size: 130%;
 }
 .contain {
   display: flex;

@@ -37,8 +37,6 @@ loginBtn.onclick = function () {
   }
   // username and password check
   if (
-    JSON.parse(localStorage.getItem("UserKey")) == username.value.trim() &&
-    password.value.trim()
   ) {
     // login success
     loginError.innerHTML = "";
