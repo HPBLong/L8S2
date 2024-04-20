@@ -50,8 +50,6 @@ loginBtn.onclick = function () {
 
   function LCcheck() {
     if (
-      userdata.username.value == username.value &&
-      userdata.password.value == password.value
     ) {
       loginError.innerHTML = "Username or password already taken!";
       console.log(userdata);

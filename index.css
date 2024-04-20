@@ -158,3 +158,9 @@ h4 {
   border-radius: 5px;
   transition: all 0.2s;
 }
+.FPSnav {
+  text-decoration: none;
+  border: none;
+  background: none;
+  color: white;
+}
