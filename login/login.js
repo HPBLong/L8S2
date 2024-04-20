@@ -22,6 +22,9 @@ const password = document.getElementById("password");
 const loginError = document.getElementById("login-error");
 const usernameError = document.getElementById("username-error");
 const passwordError = document.getElementById("password-error");
+let login = document.getElementById("login");
+let em = document.getElementById("username");
+let pw = document.getElementById("password");
 loginBtn.onclick = function () {
   // username check
   if (username.value === "") {
@@ -36,10 +39,14 @@ loginBtn.onclick = function () {
     usernameError.innerHTML = "";
   }
   // username and password check
-  if (
-  ) {
-    // login success
-    loginError.innerHTML = "";
-    window.location.href = "../index.html";
-  }
+
+  login.onsubmit = function (f) {
+    f.preventDefault();
+    let users = JSON.parse(localStorage.username);
+    for (let i = 0; i < users.length; i++) {
+      if (em.value.trim() == users[i].email && pw.value.trim() == users[i].ps) {
+        alert("Login success!");
+      }
+    }
+  };
 };

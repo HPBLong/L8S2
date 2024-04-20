@@ -22,7 +22,6 @@ const password = document.getElementById("password");
 const loginError = document.getElementById("login-error");
 const usernameError = document.getElementById("username-error");
 const passwordError = document.getElementById("password-error");
-let userdata = [];
 let lowercase = /[a-z]/g;
 let uppsercase = /[A-Z]/g;
 let numbers = /[0-9]/g;
@@ -49,14 +48,20 @@ loginBtn.onclick = function () {
   }
 
   function LCcheck() {
-    if (
-    ) {
-      loginError.innerHTML = "Username or password already taken!";
-      console.log(userdata);
+    if (localStorage.username) {
+      let users = JSON.parse(localStorage.username);
+      users.push({
+        email: email.value.trim(),
+        ps: ps.value.trim(),
+      });
+      localStorage.setItem("username", JSON.stringify(users));
     } else {
-      let Uinfo = [username.value, password.value];
-      loginError.innerHTML = "";
-      window.location.href = "../login.html";
+      localStorage.setItem(
+        "username",
+        JSON.stringify([{ email: email.value.trim(), ps: ps.value.trim() }])
+      );
+      alert("Account created!");
+      location.replace("../login/login.html");
     }
   }
 };

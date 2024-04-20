@@ -89,28 +89,59 @@ const ProductReplacer = [
   {
     ProductName: "Five Nights At Freddy's",
     Img: "./images/FNAF.jpg",
-    Price: 0,
+    Price: 100000,
     OriginalPrice: 0,
     Discount: 0,
   },
   {
     ProductName: "Five Nights At Freddy's 2",
     Img: "./images/FNAF2.jpg",
-    Price: 0,
+    Price: 100000,
     OriginalPrice: 0,
     Discount: 0,
   },
   {
-    ProductName: "Five Nights At Freddy's",
-    Img: "./images/FNAF.jpg",
-    Price: 0,
+    ProductName: "Five Nights At Freddy's 3",
+    Img: "./images/FNAF3.jpg",
+    Price: 100000,
     OriginalPrice: 0,
     Discount: 0,
   },
   {
-    ProductName: "Five Nights At Freddy's",
-    Img: "./images/FNAF.jpg",
-    Price: 0,
+    ProductName: "Five Nights At Freddy's 4",
+    Img: "./images/FNAF4.jpg",
+    Price: 100000,
+    OriginalPrice: 0,
+    Discount: 0,
+  },
+];
+
+const PRReplacer = [
+  {
+    ProductName: "Call of Duty: Black Ops",
+    Img: "./images/codbo.webp",
+    Price: 1363500,
+    OriginalPrice: 0,
+    Discount: 0,
+  },
+  {
+    ProductName: "Call of Duty: Infinite Warfare",
+    Img: "./images/codiw.jpg",
+    Price: 1363500,
+    OriginalPrice: 0,
+    Discount: 0,
+  },
+  {
+    ProductName: "Call of Duty: Modern Warfare 3",
+    Img: "./images/codmw3.jpg",
+    Price: 1799000,
+    OriginalPrice: 0,
+    Discount: 0,
+  },
+  {
+    ProductName: "Call of Duty: Warzone",
+    Img: "./images/codw.avif",
+    Price: "Free",
     OriginalPrice: 0,
     Discount: 0,
   },
@@ -195,6 +226,11 @@ Horror.onclick = function () {
   document.querySelector(".FPS").innerHTML = "Horror Games";
   for (let i = 0; i < 4; i++) {
     FPSItem.innerHTML -= `<div class="product-wrapper col-3">
+    </div>`;
+    for (let i = 0; i < 4; i++) {
+      products[i] = ProductReplacer[i];
+
+      FPSItem.innerHTML += `<div class="product-wrapper col-3">
       <div class="product">
         <a href="./product/product.html">
           <img src="${products[i].Img}" alt="" class="product-img" />
@@ -214,76 +250,36 @@ Horror.onclick = function () {
         <span class="discount">${products[i].Discount}</span>
       </div>
     </div>`;
-
-    products[i] = ProductReplacer[i];
-
-    FPSItem.innerHTML += `<div class="product-wrapper col-3">
-      <div class="product">
-        <a href="./product/product.html">
-          <img src="${products[i].Img}" alt="" class="product-img" />
-        </a>
-        <a href="./product/product.html" class="product-name">
-          <h4>${products[i].ProductName}</h4>
-          <div class="rate">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </a>
-        <span class="product-price">${products[i].Price} </span>
-        <s class="old-price">${products[i].OriginalPrice} </s>
-        <span class="discount">${products[i].Discount}</span>
-      </div>
-    </div>`;
+    }
   }
 };
 Revert.onclick = function () {
   document.querySelector(".FPS").innerHTML = "FPS Games";
   for (let i = 0; i < 4; i++) {
     FPSItem.innerHTML -= `<div class="product-wrapper col-3">
-      <div class="product">
-        <a href="./product/product.html">
-          <img src="${products[i].Img}" alt="" class="product-img" />
-        </a>
-        <a href="./product/product.html" class="product-name">
-          <h4>${products[i].ProductName}</h4>
-          <div class="rate">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-          </div>
-        </a>
-        <span class="product-price">${products[i].Price} </span>
-        <s class="old-price">${products[i].OriginalPrice} </s>
-        <span class="discount">${products[i].Discount}</span>
-      </div>
     </div>`;
-
-    products[i] = products[i];
-
+    products[i] = PRReplacer[i];
+  }
+  for (let i = 0; i < 4; i++) {
     FPSItem.innerHTML += `<div class="product-wrapper col-3">
-      <div class="product">
-        <a href="./product/product.html">
-          <img src="${products[i].Img}" alt="" class="product-img" />
-        </a>
-        <a href="./product/product.html" class="product-name">
-          <h4>${products[i].ProductName}</h4>
-          <div class="rate">
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
-            <i class="fa-solid fa-star"></i>
+          <div class="product">
+            <a href="./product/product.html">
+              <img src="${products[i].Img}" alt="" class="product-img" />
+            </a>
+            <a href="./product/product.html" class="product-name">
+              <h4>${products[i].ProductName}</h4>
+              <div class="rate">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+            </a>
+            <span class="product-price">${products[i].Price} </span>
+            <s class="old-price">${products[i].OriginalPrice} </s>
+            <span class="discount">${products[i].Discount}</span>
           </div>
-        </a>
-        <span class="product-price">${products[i].Price} </span>
-        <s class="old-price">${products[i].OriginalPrice} </s>
-        <span class="discount">${products[i].Discount}</span>
-      </div>
-    </div>`;
+        </div>`;
   }
 };
